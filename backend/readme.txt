@@ -1,5 +1,7 @@
 # Setup
 
+This backend was create with node: v22.14.0
+
 First run `npm i` to install the dependancies
 
 Next copy .env.example and rename it to .env

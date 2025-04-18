@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #34d399;
+    --dark: #111827;
+    --dark-grey: #1f2937;
+    --grey: #79808c;
+    --light-grey: #374151;
+    --delete: #ef4444;
+}
+
+@theme {
+    --color-primary: var(--primary);
+    --color-dark: var(--dark);
+    --color-dark-grey: var(--dark-grey);
+    --color-grey: var(--grey);
+    --color-light-grey: var(--light-grey);
+    --color-delete: var(--delete);
+}
+
+body {
+    background-color: var(--dark-grey);
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+}
