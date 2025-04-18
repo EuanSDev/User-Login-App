@@ -22,6 +22,13 @@ router.post(
     body('password')
       .trim()
       .isLength({ min: 5 })
+      .custom((value, {req}) => {
+        if(value !== req.body.confirmPassword.trim()) {
+          return false;
+        }
+
+        return true;
+      })
   ],
   postRegisterUser
 );
