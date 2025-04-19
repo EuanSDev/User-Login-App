@@ -24,3 +24,19 @@ Frontend:
 3. To run the site in development run `npm run dev`, to run it in production first run `npm run build` and then `npm run start`
 4. The frontend should now be setup and you should be able to visit it on http://localhost:3000 (or whatever PORT nextjs chose to serve it on)
 5. If you want to run tests, open another terminal and cd into the frontend folder, then run `npm run test`
+
+
+References
+
+Backend:
+https://www.mongodb.com/docs/manual/crud/
+https://express-validator.github.io/docs/guides/validation-chain/
+
+Frontend:
+https://nextjs.org/docs
+https://tailwindcss.com/
+https://redux-toolkit.js.org/tutorials/quick-start
+https://testing-library.com/docs/react-testing-library/intro
+https://jestjs.io/
+https://medium.com/@gizemcandemir3/mastering-next-js-unit-testing-a-comprehensive-guide-a52b6927e105
+https://react-icons.github.io/react-icons/search/#q=close
