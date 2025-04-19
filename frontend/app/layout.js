@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import InitStore from "@/components/InitStore";
-import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
 	variable: "--font-poppins",
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
       >
         <ReduxProvider>
           <InitStore>
-            <Navbar />
             {children}
           </InitStore>
         </ReduxProvider>

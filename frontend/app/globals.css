@@ -19,8 +19,7 @@
 }
 
 @layer {
-    .navbar__item a,
-    .navbar__item button {
+    .navbar__item a {
         @apply
             block py-2 px-4 font-medium cursor-pointer
             sm:text-lg
@@ -28,7 +27,7 @@
     }
 
     h1 {
-        @apply text-3xl font-semibold;
+        @apply text-xl sm:text-3xl font-semibold;
     }
 
     .btn {
@@ -36,7 +35,15 @@
     }
 
     .btn--primary {
-        @apply bg-primary;
+        @apply bg-primary hover:bg-primary/80;
+    }
+
+    .btn--delete {
+        @apply bg-delete hover:bg-delete/80;
+    }
+
+    .btn--small {
+        @apply text-base py-2 px-3 sm:py-3 sm:px-4;
     }
 }
 

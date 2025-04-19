@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { LuUserRound } from "react-icons/lu";
 
 import { getUserData } from "@/utils/auth";
 
-import Section from "@/components/Section";
-import Heading from "@/components/Heading";
-import Card from "@/components/Card";
-import Input from "@/components/Input";
+import Section from "@/components/UI/Section";
+import Heading from "@/components/UI/Heading";
+import Card from "@/components/UI/Card";
+import Input from "@/components/UI/Input";
 
 const User = () => {
   const [name, setName] = useState('');
@@ -30,21 +31,19 @@ const User = () => {
   }, [])
 
   return (
-    <main>
-      <Section>
-        <Heading>
-          <h1>User Details</h1>
-        </Heading>
+    <Section>
+      <Heading Icon={LuUserRound}>
+        <h1>User Details</h1>
+      </Heading>
 
-        <Card className="mx-auto mt-8 max-w-none">
-            <form className="mt-4 flex flex-col gap-2">
-              <Input type="text" label="Name" name="name" defaultValue={name} required readOnly />
-              <Input type="email" label="Email" name="email" defaultValue={email} required readOnly />
-              <Input type="password" label="Password" name="password" placeholder="******" required readOnly />
-            </form>
-        </Card>
-      </Section>
-    </main>
+      <Card className="mx-auto mt-8 max-w-none">
+          <form className="mt-4 flex flex-col gap-2">
+            <Input type="text" label="Name" name="name" defaultValue={name} required readOnly />
+            <Input type="email" label="Email" name="email" defaultValue={email} required readOnly />
+            <Input type="password" label="Password" name="password" placeholder="******" required readOnly />
+          </form>
+      </Card>
+    </Section>
   )
 }
 export default User

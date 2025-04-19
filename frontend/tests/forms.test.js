@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import Input from "@/components/Input";
+import Input from "@/components/UI/Input";
 
 describe('Forms', () => {
 

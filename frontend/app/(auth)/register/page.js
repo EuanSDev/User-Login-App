@@ -2,16 +2,18 @@
 
 import Link from "next/link"
 
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Input from "@/components/Input"
-import Card from "@/components/Card"
+import Input from "@/components/UI/Input"
+import Card from "@/components/UI/Card"
 
 import { login } from "@/store/authSlice";
 import { signupUser } from "@/utils/auth";
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const [errors, setErrors] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,6 +43,10 @@ const Signup = () => {
       window.location.href = '/user';
     } catch(err) {
       console.log(err);
+      setErrors([
+        'Error registering, please check your details and try again.',
+        'Ensure your email address is valid, your password is at least 5 characters and that they both match.',
+      ]);
     }
   }
 
@@ -50,10 +56,11 @@ const Signup = () => {
         <div className="container mx-auto px-4">
 
           <Card className="mx-auto">
+            <div className="md:max-w-xl mx-auto">
               <div className="flex flex-col justify-center items-center">
                 <h1 className="mb-4">Register</h1>
 
-                <p>Already have an account? <Link href="/login" className="cursor-pointer text-primary underline">Log in.</Link></p>
+                <p className="text-center">Already have an account? <Link href="/login" className="cursor-pointer text-primary underline">Log in.</Link></p>
               </div>
 
               <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-2">
@@ -62,8 +69,13 @@ const Signup = () => {
                 <Input type="password" label="Password" name="password" required placeholder="******" />
                 <Input type="password" label="Confirm Password" name="confirmPassword" required placeholder="******" autoComplete="current-password" />
 
+                {errors && errors.map((err, index) => (
+                  <p key={index} className="text-delete">{err}</p>
+                ))}
+
                 <button type="submit" className="btn btn--primary mt-4 ml-auto">Register</button>
               </form>
+            </div>
           </Card>
 
         </div>
