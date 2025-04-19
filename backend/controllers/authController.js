@@ -13,11 +13,17 @@ export const getUser = async (req, res, next) => {
       throw new Error('User not found');
     }
 
+    const { _id, name, email } = user;
+
     return res.status(200).json({
       success: true,
       message: 'User found',
       data: {
-        user,
+        user: {
+          _id,
+          name,
+          email,
+        }
       }
     });
   } catch(err) {
