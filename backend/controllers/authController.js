@@ -62,7 +62,10 @@ export const postRegisterUser = async (req, res, next) => {
     return res.status(201).json({
       success: true,
       message: 'user created',
-      data,
+      data: {
+        ...data,
+        userName: user.name
+      },
     });
   } catch(err) {
     console.log(err);
@@ -100,7 +103,10 @@ export const postLoginUser = async (req, res, next) => {
     return res.status(200).json({
       success: true,
       message: 'User logged in',
-      data,
+      data: {
+        ...data,
+        userName: user.name,
+      },
     });
 
   } catch(err) {

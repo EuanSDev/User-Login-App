@@ -17,8 +17,7 @@ router.post(
       .notEmpty()
       .trim(),
     body('email')
-      .isEmail()
-      .normalizeEmail(),
+      .isEmail(),
     body('password')
       .trim()
       .isLength({ min: 5 })
@@ -38,8 +37,7 @@ router.post(
   '/login',
   [
     body('email')
-      .isEmail()
-      .normalizeEmail(),
+      .isEmail(),
     body('password')
       .trim()
       .notEmpty(),

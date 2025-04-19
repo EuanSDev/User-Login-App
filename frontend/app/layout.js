@@ -3,9 +3,13 @@ import ReduxProvider from "@/components/ReduxProvider";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
+import InitStore from "@/components/InitStore";
+import Navbar from "@/components/Navbar";
+
 const poppins = Poppins({
 	variable: "--font-poppins",
 	weight: ["300", "400", "500", "600", "700", "900"],
+  subsets: ['latin']
 });
 
 export const metadata = {
@@ -19,7 +23,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} antialiased`}
       >
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <InitStore>
+            <Navbar />
+            {children}
+          </InitStore>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -18,6 +18,28 @@
     --color-delete: var(--delete);
 }
 
+@layer {
+    .navbar__item a,
+    .navbar__item button {
+        @apply
+            block py-2 px-4 font-medium cursor-pointer
+            sm:text-lg
+            hover:text-grey;
+    }
+
+    h1 {
+        @apply text-3xl font-semibold;
+    }
+
+    .btn {
+        @apply block py-3 px-4 rounded-lg max-w-fit font-semibold cursor-pointer;
+    }
+
+    .btn--primary {
+        @apply bg-primary;
+    }
+}
+
 body {
     background-color: var(--dark-grey);
     color: #FFF;
